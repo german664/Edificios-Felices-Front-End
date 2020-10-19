@@ -20,7 +20,7 @@ const ModalComprobante = props => {
                     </div>
                     <div className="modal-body">
                         {store.montosTotalesMes.length > 0 && props.comprobante !== "" && props.show &&
-                            < PDFView url={`${store.apiURL}/comprobantes/${props.comprobante}`}> </PDFView>}
+                            < PDFView url={`${store.filesURL}/comprobantes/${props.comprobante}`}> </PDFView>}
                     </div>
                     <div className="modal-footer">
                         <button

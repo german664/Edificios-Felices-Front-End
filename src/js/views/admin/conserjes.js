@@ -132,7 +132,7 @@ const Conserjes = () => {
                                                 <div className="fondo-avatar"></div>
                                                 <div className="d-flex justify-content-center header-conserje p-3">
                                                     <div className="avatar-img shadow-sm">
-                                                        <img src={`${store.apiURL}/avatares/${conserje.avatar}`} className="card-img-top" alt={conserje.name} />
+                                                        <img src={`${store.filesURL}/avatares/${conserje.avatar}`} className="card-img-top" alt={conserje.name} />
                                                     </div>
 
 

@@ -19,7 +19,7 @@ const PagoUsuario = props => {
                     </div>
                     <div className="modal-body">
                         {!!props.pago && props.show &&
-                            < PDFView url={`${store.apiURL}/pagosgastos/${props.pago}`} width="100%"> </ PDFView>}
+                            < PDFView url={`${store.filesURL}/pagos/${props.pago}`} > </ PDFView>}
                         {!props.pago &&
                             <h3 className="text-center mt-5 pt-5">No existe registro de este comprobante</h3>
                         }
