@@ -4,7 +4,6 @@ const getState = ({ getStore, getActions, setStore }) => {
     return {
         store: {
             apiURL: "https://edificios-felices.herokuapp.com",
-
             /* apiURL: " http://127.0.0.1:5000/", */
             filesURL: "https://edificios-felices-assets.s3.eu-west-2.amazonaws.com/static",
             username: "",
@@ -775,7 +774,6 @@ const getState = ({ getStore, getActions, setStore }) => {
                 catch (error) {
                     console.log(error)
                 }
-                console.log(aux.email)
             },
             getCurrentEdificio: () => {
                 if (localStorage.getItem("currentUser")) {
