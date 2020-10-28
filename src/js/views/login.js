@@ -1,12 +1,19 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import ModalPassword from '../components/modalPassword';
 import { Context } from '../store/appContext';
 import Background from '../../img/FAVPNG_building-poster-banner-wallpaper_VQmBR0TP.png'
+import ModalCuentas from '../components/modalCuentas';
+import Button from 'react-bootstrap/Button'
+
 
 const Login = props => {
     const { store, actions } = useContext(Context);
     const history = useHistory();
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const sectionStyle = {
         width: "100%",
@@ -15,7 +22,7 @@ const Login = props => {
     }
 
     useEffect(() => {
-/*         if (store.currentUser !== null) history.push("/dashboard"); */
+        /*         if (store.currentUser !== null) history.push("/dashboard"); */
         actions.mostrarUsuario()
 
     }, [store.currentUser]);
@@ -72,7 +79,7 @@ const Login = props => {
                             </div>
                             <div className="form-group form-check">
                                 <span className="pr-2">Olvidaste tu contraseña?</span>
-                                <a style={{color: " #121975"}} href="/login" data-toggle="modal" data-target="#staticBackdrop">
+                                <a style={{ color: " #121975" }} href="/login" data-toggle="modal" data-target="#staticBackdrop">
                                     Recuperar
                                 </a>
                                 <ModalPassword />
@@ -88,10 +95,15 @@ const Login = props => {
                                 />
                                 <label className="form-check-label" htmlFor="recordarPassword">Recordar Usuario</label>
                             </div>
-                            <button className="btn btn-azul text-white mb-5">Iniciar sesion</button>
+                            <button className="btn btn-azul text-white mb-3">Iniciar sesion</button>
+
                         </form>
+                        <button variant="primary" className="btn btn-verde mb-3" onClick={handleShow}>
+                            Ver Usuarios de Prueba
+                            </button>
                     </div>
                 </div>
+
             </div>
             <div className="container">
                 <div className="row">
@@ -104,6 +116,7 @@ const Login = props => {
                     </div>
                 </div>
             </div>
+            <ModalCuentas show={show} onHide={handleClose} />
         </div>
     )
 };

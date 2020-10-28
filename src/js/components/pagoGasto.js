@@ -11,7 +11,7 @@ const PagoGastos = props => {
 
         <div className="modal modal-dialog-scrollable overflowy-auto" tabIndex="-1" role="dialog" style={{ display: props.show ? "inline-block" : "none" }}>
             <div className="modal-dialog modal-dialog-centered" role="document">
-                <div className="modal-content bg-modal modal-lg2">
+                <div className="modal-content bg-modal modal-lg2 ">
                     <div>
                         <button type="button" className="close float-right mr-4" onClick={() => props.setShow(false)}>
                             <span aria-hidden="true">&times;</span>
@@ -19,7 +19,7 @@ const PagoGastos = props => {
                     </div>
                     <div className="modal-body">
                         {!!props.datos.pago && props.show &&
-                            < PDFView url={`${store.apiURL}/pagosgastos/${props.datos.pago}`}> </PDFView>}
+                            < PDFView url={`${store.filesURL}/pagos/${props.datos.pago}`}> </PDFView>}
                     </div>
                     <div className="modal-footer d-flex justify-content-center">
                         <div className="d-flex justify-content-center">
