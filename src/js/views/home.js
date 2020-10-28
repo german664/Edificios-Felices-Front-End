@@ -1,11 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { Context } from '../store/appContext';
 
 const Home = () => {
     const { store, actions } = useContext(Context);
     const history = useHistory();
+    useEffect(() => {
+        window.scrollTo(0, 0)
 
+    }, [])
     return (
         <>
 

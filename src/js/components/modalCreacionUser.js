@@ -11,9 +11,9 @@ const ModalCreacionUser = props => {
         <>
             <div
                 /* id="modalCreacionUser" */
-                className="modal"
+                className="modal overflow-auto"
                 tabIndex="-1"
-                style={{ display: store.flagModal ? "inline-block" : "none" }}
+                style={{ display: store.flagModal ? "inline-block" : "none", maxHeight: "90vh", overflow: "auto" }}
             >
                 <div className="modal-dialog">
                     <div className="modal-content">
@@ -62,8 +62,8 @@ const ModalCreacionUser = props => {
                                                     <option value="default" disabled>Seleccionar</option>
                                                     {
                                                         !!store.roles &&
-                                                        store.roles.map((rol, index)=>{
-                                                            return(
+                                                        store.roles.map((rol, index) => {
+                                                            return (
                                                                 <option key={index} value={rol.id}>{rol.rol}</option>
                                                             )
                                                         })
@@ -92,8 +92,8 @@ const ModalCreacionUser = props => {
                                                     <option value="default">Ninguno</option>
                                                     {
                                                         !!store.edificios &&
-                                                        store.edificios.map((edificio, index)=>{
-                                                            return(
+                                                        store.edificios.map((edificio, index) => {
+                                                            return (
                                                                 <option key={index} value={edificio.id}>{edificio.nombre_edificio}</option>
                                                             )
                                                         })

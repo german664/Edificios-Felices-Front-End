@@ -25,8 +25,10 @@ const DashboardSuperAdmin = () => {
         const porVencer = store.edificios.filter((contrato) => {
             const fechaContrato = new Date(contrato.termino_contrato)
             const mesContrato = fechaContrato.getMonth()
+            const añoContrato = fechaContrato.getFullYear()
             const mesActual = store.currentDate.getMonth();
-            const proximoVencer = (mesContrato - mesActual) <= 1 ? true : false;
+            const añoActual = store.currentDate.getFullYear()
+            const proximoVencer = (mesContrato - mesActual) <= 1 && (añoActual === añoContrato) ? true : false;
             return (store.currentDate < fechaContrato && proximoVencer)
         })
         return porVencer
@@ -45,7 +47,9 @@ const DashboardSuperAdmin = () => {
             const fechaContrato = new Date(contrato.termino_contrato)
             const mesContrato = fechaContrato.getMonth()
             const mesActual = store.currentDate.getMonth();
-            const proximoVencer = (mesContrato - mesActual) <= 1 ? true : false;
+            const añoContrato = fechaContrato.getFullYear()
+            const añoActual = store.currentDate.getFullYear()
+            const proximoVencer = (mesContrato - mesActual) <= 1 && (añoActual === añoContrato) ? true : false;
             return (fechaContrato > store.currentDate && (proximoVencer === false))
         })
         return vigente
@@ -67,7 +71,7 @@ const DashboardSuperAdmin = () => {
 
                                     <div className="d-flex justify-content-center p-3">
                                         <span className="ml-md-1 big-font d-flex align-items-center justify-content-center p-5 btn-db-1 shadow-sm">
-                                            <p className="pt-3">{store.edificios.length  > 0? store.edificios.length : "0"}</p>
+                                            <p className="pt-3">{store.edificios.length > 0 ? store.edificios.length : "0"}</p>
                                         </span>
                                     </div>
                                 </div>
@@ -100,7 +104,7 @@ const DashboardSuperAdmin = () => {
                                         return <li key={index} className="card shadow-sm mb-3 pt-2 px-1"> <h6>{contacto.email}</h6><h5 className="font-weight-bold dashboard-subtitle">{contacto.plan}</h5></li>
                                     }
                                 })}
-                                {!store.contactos.includes(true)
+                                {store.contactos.includes(true)
                                     && <p>No hay correos sin contactar</p>}
 
                             </ul>

@@ -147,7 +147,7 @@ const GastosUser = () => {
 
 
                     <div className="col-12 col-md-10 container mx-auto overflow-auto pb-4 mt-4">
-                        <h3 className="text-center mb-3" onClick={() => console.log(currentPosts)}>Historial</h3>
+                        <h3 className="text-center mb-3">Historial</h3>
                         {!!gastosDepto && gastosDepto.length > 0 &&
                             <>
                                 < table className="table text-center  table-bordered border overflow-auto mx-auto ">

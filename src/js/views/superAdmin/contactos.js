@@ -32,7 +32,7 @@ const Contactos = () => {
             <div className="container-fluid">
 
                 <div className="row">
-                    <div className="col-12 col-md-8 mx-auto overflow-auto ">
+                    <div className="col-12 col-md-10 mx-auto overflow-auto ">
                         <table className="table table-hover table-bordered border">
                             <thead className="btn-oscuro text-center">
                                 <tr>
@@ -70,7 +70,7 @@ const Contactos = () => {
 
                 </div>
                 <div className="d-flex justify-content-center">
-                    <Link to="/contactados"><span className="btn btn-verde ">Contactos archivados</span> </Link>
+                    <Link to="/contactados"><span className="btn btn-verde  mb-3">Contactos archivados</span> </Link>
                 </div>
             </div>
 
